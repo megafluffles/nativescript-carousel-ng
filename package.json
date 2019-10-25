@@ -35,7 +35,7 @@
     "babylon": "6.18.0",
     "lazy": "1.0.11",
     "nativescript-dev-sass": "^1.6.0",
-    "nativescript-dev-typescript": "^0.7.8",
+    "nativescript-dev-typescript": "^0.7.9",
     "typescript": "~3.1.1"
   }
 }
