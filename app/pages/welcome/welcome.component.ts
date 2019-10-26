@@ -26,7 +26,7 @@ export class WelcomeComponent implements OnInit {
 
   private slidesView: GridLayout;
 
-  @ViewChild('slideContent') slideElement: ElementRef;
+  @ViewChild('slideContent', { static: false }) slideElement: ElementRef;
   private slideView: ContentView;
 
   constructor(
