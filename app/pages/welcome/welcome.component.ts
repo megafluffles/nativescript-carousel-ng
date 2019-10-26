@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
-import { Page, ContentView } from "tns-core-modules/ui/page";
-import { SwipeGestureEventData } from "tns-core-modules/ui/gestures/gestures";
-import { GridLayout, GridUnitType, ItemSpec } from "tns-core-modules/ui/layouts/grid-layout";
-import { AnimationDefinition, Animation } from 'tns-core-modules/ui/animation';
-import { screen } from "tns-core-modules/platform";
+import { Page, ContentView } from "ui/page";
+import { SwipeGestureEventData } from "ui/gestures/gestures";
+import { GridLayout, GridUnitType, ItemSpec } from "ui/layouts/grid-layout";
+import { AnimationDefinition, Animation } from 'ui/animation';
+import { screen } from "platform";
 
-import * as fs from "tns-core-modules/file-system";
-import * as builder from "tns-core-modules/ui/builder";
+import * as fs from "file-system";
+import * as builder from "ui/builder";
 
 @Component({
   selector: "welcome",
