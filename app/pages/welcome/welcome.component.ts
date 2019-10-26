@@ -26,7 +26,7 @@ export class WelcomeComponent implements OnInit {
 
   private slidesView: GridLayout;
 
-  @ViewChild('slideContent', { static: false }) slideElement: ElementRef;
+  @ViewChild('slideContent', { static: true }) slideElement: ElementRef;
   private slideView: ContentView;
 
   constructor(
@@ -41,7 +41,12 @@ export class WelcomeComponent implements OnInit {
     this.page.cssClasses.add("welcome-page-background");
     this.page.backgroundSpanUnderStatusBar = true;
 
+    console.log("slideElement is null:" + this.slideElement == null);
+
     this.slideView = this.slideElement.nativeElement;
+
+    console.log("slideFiles is null:" + this.slideFiles == null);
+    console.log("slideFiles length:" + this.slideFiles.length);
 
     this.loadSlides(this.slideFiles, this.slidesPath).then((slides: any) => {
       var row = new ItemSpec(1, GridUnitType.STAR);
@@ -65,7 +70,9 @@ export class WelcomeComponent implements OnInit {
       const path = fs.path.normalize(currentAppFolder.path + "/" + slidesPath);
       slideFiles.forEach((dataFile, i) => {
         const slidePath = path + "/" + dataFile;
-        slides.push(builder.load(slidePath))
+        console.log(path);
+        console.log(dataFile);
+        slides.push(builder.parse(slidePath))
       });
 
       resolve(slides);
