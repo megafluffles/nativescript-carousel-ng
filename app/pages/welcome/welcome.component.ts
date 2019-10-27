@@ -72,6 +72,9 @@ export class WelcomeComponent implements OnInit {
         const slidePath = path + "/" + dataFile;
         var slide = builder.parse(slidePath);
 
+        fadsfasdfasd;
+        // why not do this wihtout all ths xml bull? might actually work too!
+
         console.log(`slide is null: ${slide == null}`);
 
         slides.push(slide)
