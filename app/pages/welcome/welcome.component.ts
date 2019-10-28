@@ -17,7 +17,7 @@ import * as builder from "tns-core-modules/ui/builder";
 })
 export class WelcomeComponent implements OnInit {
   private slidesPath = 'pages/welcome/slides';
-  private slideFiles = ['slide1.xml', 'slide2.xml', 'slide3.xml'];
+  private slideFiles = ['slide1-fragment.xml', 'slide2-fragment.xml', 'slide3-fragment.xml'];
 
   private currentSlideNum: number = 0;
   private slideCount = 3;
@@ -67,13 +67,10 @@ export class WelcomeComponent implements OnInit {
     return new Promise(function (resolve, reject) {
       const slides = []
       const currentAppFolder = fs.knownFolders.currentApp();
-      const path = fs.path.normalize(currentAppFolder.path + "/" + slidesPath);
       slideFiles.forEach((dataFile, i) => {
-        const slidePath = path + "/" + dataFile;
-        var slide = builder.parse(slidePath);
+        const path = `~/${slidesPath}/${dataFile}`;
 
-        fadsfasdfasd;
-        // why not do this wihtout all ths xml bull? might actually work too!
+        var slide = builder.load(path);
 
         console.log(`slide is null: ${slide == null}`);
 
